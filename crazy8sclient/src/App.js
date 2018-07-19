@@ -76,7 +76,7 @@ class App extends Component {
               !this.state.game.suitChangedNeeded?
 
               <div>
-                <h1>Your Hand</h1>
+                <h1>Your Hand(Player {this.state.player+1})</h1>
                 {!(this.state.player === false) && this.renderHand(this.state.game.players[this.state.player].hand)}
                 <button onClick={socketApi.draw}>Draw</button>
               </div>
