@@ -1,0 +1,19 @@
+{
+  "name": "crazy8s",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm install --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mholliday6611/crazy8s.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mholliday6611/crazy8s/issues"
+  },
+  "homepage": "https://github.com/Mholliday6611/crazy8s#readme"
+}
