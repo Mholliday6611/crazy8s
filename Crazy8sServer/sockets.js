@@ -12,6 +12,7 @@ const gameSocket = function(server){
 		socket.on('room', room=>{
 			socket.join(room, ()=>{
 				gameRoom.in(room).clients((err,clients)=>{
+					socket.emit('joined', clients.length)
 					if(game[Object.keys(socket.rooms)[0]] !== undefined){
 					socket.emit('updateGame', game[Object.keys(socket.rooms)[0]])
 					}
