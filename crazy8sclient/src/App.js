@@ -31,13 +31,13 @@ class App extends Component {
   renderHand(hand){
     let playCard = this.state.game.currentTurn === this.state.player? (index)=>socketApi.playCard(index) : () => alert("Not your turn dick!")
    return(<div style={{"overflowX":"scroll",display:"inline"}}>
-    {hand.map((card,index)=><img className="yourCard" height="100" onClick={()=>playCard(index)} src={`http://localhost:8080/images/${card.image}.png`}/>)}
+    {hand.map((card,index)=><img className="yourCard" height="100" onClick={()=>playCard(index)} src={`/images/${card.image}.png`}/>)}
       </div>)   
   }
   renderOthers(players){
     let others = players.filter((elem,index)=> index !== this.state.player)
 
-    return(others.map(i=> <div className="otherCards"><h4>Player {i.id+1}'s Hand:</h4>X{i.hand.length}<img height="100" src='http://localhost:8080/images/card_back_black.png'/></div>))
+    return(others.map(i=> <div className="otherCards"><h4>Player {i.id+1}'s Hand:</h4>X{i.hand.length}<img height="100" src='/images/card_back_black.png'/></div>))
   }
 
   render() {
@@ -52,7 +52,7 @@ class App extends Component {
 
         <div className="GameDetails">
           <h1>Current Turn: Player {this.state.game.currentTurn +1}</h1>
-          <h1>Current Card: </h1> <img height="100" src={`http://localhost:8080/images/${this.state.game.cardsInPlay[0].image}.png`}/>
+          <h1>Current Card: </h1> <img height="100" src={`/images/${this.state.game.cardsInPlay[0].image}.png`}/>
           <h1>Wild Card Suit: {this.state.game.changedSuit}</h1>
         </div>
 
