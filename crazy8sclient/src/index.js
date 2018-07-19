@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom
 ReactDOM.render(
 	<Router>
 		<div>
-			<Route path="/" component={Home} />
+			<Route exact path="/" component={Home} />
 			<Route exact path="/:room" component={App} />
 		</div>
 	</Router>, 

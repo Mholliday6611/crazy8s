@@ -14,8 +14,9 @@ class App extends Component {
         game=>this.setState({
         game: game
       }),
-        
+
         player=>{
+          console.log(localStorage.getItem("player"))
           if(localStorage.getItem("player") !== undefined){
             return this.setState({
               player:localStorage.getItem("player")
