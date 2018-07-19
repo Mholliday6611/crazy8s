@@ -17,7 +17,7 @@ class App extends Component {
 
         player=>{
           console.log(localStorage.getItem("player"))
-          if(localStorage.getItem("player") !== undefined){
+          if(localStorage.getItem("player") !== null){
             return this.setState({
               player:localStorage.getItem("player")
             })
@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props)
+    console.log(this.state)
     return (
       this.state.game.started?
       <div className="App">
