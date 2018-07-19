@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node Crazy8sServer/server.js",
-    "postinstall": "npm install --prefix Crazy8sServer && npm install --prefix crazy8sclient && npm build --prefix crazy8sclient "
+    "postinstall": "npm install --prefix Crazy8sServer && npm install --prefix crazy8sclient && npm run build --prefix crazy8sclient "
   },
   "repository": {
     "type": "git",
