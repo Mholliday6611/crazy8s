@@ -7,11 +7,11 @@ import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom"
 
 ReactDOM.render(
-	<div>
 	<Router>
-		<Route path="/" component={Home} />
-		<Route exact path="/:room" component={App} />
-	</Router>
-	</div>, 
+		<div>
+			<Route path="/" component={Home} />
+			<Route exact path="/:room" component={App} />
+		</div>
+	</Router>, 
 	document.getElementById('root'));
 registerServiceWorker();
