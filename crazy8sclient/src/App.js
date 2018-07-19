@@ -14,9 +14,21 @@ class App extends Component {
         game=>this.setState({
         game: game
       }),
-        player=>this.setState({
-        player:(player -1)
-      }),
+        
+        player=>{
+          if(localStorage.getItem("player") !== undefined){
+            return this.setState({
+              player:localStorage.getItem("player")
+            })
+          }else{
+            localStorage.setItem("player", player-1)
+
+            return this.setState({
+              player:(player -1)
+            })
+          }
+        },
+
         this.props.match.params.room
     )
     this.handleChange = this.handleChange.bind(this)
