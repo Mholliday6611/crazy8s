@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node Crazy8sServer/server.js",
     "postinstall": "npm install --prefix Crazy8sServer"
   },
   "repository": {
