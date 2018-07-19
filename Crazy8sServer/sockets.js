@@ -52,7 +52,7 @@ const gameSocket = function(server){
 			let currentRoom = Object.keys(socket.rooms)[0]
 
 			game[currentRoom].changeSuit(suit)
-			gameRoom.in(currentRoom.emit('updateGame',game[currentRoom]))
+			gameRoom.in(currentRoom).emit('updateGame',game[currentRoom]))
 		})
 
 	})
