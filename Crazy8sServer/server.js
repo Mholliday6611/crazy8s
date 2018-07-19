@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use('/images', express.static(path.join(__dirname, 'images')))
-app.use(express.static(path.join(__dirname, '../crazy8sclient/build')))
+app.use(express.static(path.join(__dirname, 'crazy8sclient/build')))
 const server = app.listen(process.env.PORT || 8080)
 // mongoose.connect("mongodb://localhost/crazy8")
 
