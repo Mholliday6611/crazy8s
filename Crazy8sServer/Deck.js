@@ -8,8 +8,9 @@ class Deck {
 			this.name = value + " of " + suit
 			this.suit = suit
 			this.value = value
+			this.image = value + suit[0].toLowerCase()
 
-			return {name:this.name, suit:this.suit, value:this.value}
+			return {name:this.name, suit:this.suit, value:this.value, image:this.image}
 		}
 
 		let values = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']

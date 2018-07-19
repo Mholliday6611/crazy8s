@@ -1,5 +1,7 @@
+const path = require("path")
+
 module.exports = function(app){
-	app.post("/createGame", (req,res) => {
-		
+	app.get("*", (req,res) => {
+		res.sendFile(path.join(__dirname, '../crazy8sclient/build', 'index.html'))
 	})
 }

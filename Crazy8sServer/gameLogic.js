@@ -89,12 +89,12 @@ class Game {
 		}else if (card.value === "A"){
 			//Next Player draws 4
 			for(let i = 0; i < 4 ; i++){
-				this.players[personToDraw].draw(this.deck)
+				this.players[personToDraw].draw(this)
 			}
 		}else if (card.value === "2"){
 			//Next Player picks up 2
 			for(let i = 0; i < 2 ; i++){
-				this.players[personToDraw].draw(this.deck)
+				this.players[personToDraw].draw(this)
 			}
 		}
 
@@ -105,7 +105,7 @@ class Game {
 	}
 
 	changeSuit(suit){
-		this.changeSuit = suit;
+		this.changedSuit = suit;
 		this.suitChangedNeeded = false
 
 		this.nextTurn(0)
@@ -114,7 +114,7 @@ class Game {
 	nextTurn(turnsToSkip){
 		if(this.orderFoward){
 			this.currentTurn += (1+turnsToSkip)
-			if(this.currentTurn == this.numberOfPlayers){
+			if(this.currentTurn >= this.numberOfPlayers){
 				this.currentTurn = 0
 			}
 		}else{

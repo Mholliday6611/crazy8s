@@ -4,10 +4,11 @@ class Player {
 		this.id = id
 	}
 
-	draw(deck){
+	draw(game){
 		//PASS IN THE GAME'S DECK
-		let drawnCard = deck.cards.shift();
+		let drawnCard = game.deck.cards.shift();
 		this.addToHand(drawnCard)
+		game.nextTurn(0)
 	}
 
 	//cardIndex is the index of the card in Player's hand
