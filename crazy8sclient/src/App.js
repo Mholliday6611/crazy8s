@@ -67,6 +67,7 @@ class App extends Component {
           <h1>Current Turn: Player {this.state.game.currentTurn +1}</h1>
           <h1>Current Card: </h1> <img height="100" src={`/images/${this.state.game.cardsInPlay[0].image}.png`}/>
           <h1>Wild Card Suit: {this.state.game.changedSuit}</h1>
+          <p>Send URL to Invite friends</p>
         </div>
 
         <div className="playerHand">
@@ -91,7 +92,7 @@ class App extends Component {
            
            :
             <div>
-                <h1>Your Hand</h1>
+                <h1>Your Hand(Player {this.state.player+1})</h1>
                 {!(this.state.player === false) && this.renderHand(this.state.game.players[this.state.player].hand)}
             </div>
 
@@ -102,6 +103,7 @@ class App extends Component {
       :
 
       <div>
+        <h1>How Many Players?</h1>
         <input type="number" name="numberOfPlayers" onChange={this.handleChange}/>
         <button onClick={()=>socketApi.startGame(this.state.numberOfPlayers)}>click</button>
       </div>
