@@ -16,13 +16,13 @@ class App extends Component {
       }),
 
         player=>{
-          console.log(localStorage.getItem("player"))
-          if(localStorage.getItem("player") !== null){
+          console.log(localStorage.getItem(this.props.match.params.room))
+          if(localStorage.getItem(this.props.match.params.room) !== null){
             return this.setState({
-              player:localStorage.getItem("player")
+              player:parseInt(localStorage.getItem(this.props.match.params.room))
             })
           }else{
-            localStorage.setItem("player", player-1)
+            localStorage.setItem(this.props.match.params.room, player-1)
 
             return this.setState({
               player:(player -1)
