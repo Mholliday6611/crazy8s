@@ -21,6 +21,11 @@ const gameSocket = function(server){
 		})
 
 		socket.on('startGame', numberOfPlayers =>{
+			if(numberOfPlayers === 0){
+				numberOfPlayers = 2
+			}else if(numberOfPlayers > 8){
+				numberOfPlayers = 8
+			}
 			game[Object.keys(socket.rooms)[0]] = new Game()
 			game[Object.keys(socket.rooms)[0]].startGame(numberOfPlayers)
 			gameRoom.in(Object.keys(socket.rooms)[0]).emit('updateGame', game[Object.keys(socket.rooms)[0]])
