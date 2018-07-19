@@ -36,21 +36,23 @@ const gameSocket = function(server){
 			let result = game[currentRoom].players[game[currentRoom].currentTurn].playCard(cardIndex,game[currentRoom].checkCards)
 			console.log(result)
 			if(result){
-				gameRoom.in(Object.keys(socket.rooms)[0]).emit('updateGame',game[currentRoom])
+				gameRoom.in(currentRoom).emit('updateGame',game[currentRoom])
 			}else{
-				gameRoom.in(Object.keys(socket.rooms)[0]).emit('error', "Can't Place that card!")
+				gameRoom.in(currentRoom).emit('error', "Can't Place that card!")
 			}
 		})
 
 		socket.on('draw', ()=>{
 			let currentRoom = Object.keys(socket.rooms)[0]
 			game[currentRoom].players[game[currentRoom].currentTurn].draw(game[currentRoom])
-			gameRoom.in(Object.keys(socket.rooms)[0]).emit('updateGame',game[currentRoom])
+			gameRoom.in(currentRoom).emit('updateGame',game[currentRoom])
 		})
 
 		socket.on('changeSuit', suit=>{
-			game.changeSuit(suit)
-			gameRoom.in(Object.keys(socket.rooms)[0]).emit('updateGame',game[Object.keys(socket.rooms)[0]])
+			let currentRoom = Object.keys(socket.rooms)[0]
+
+			game[currentRoom].changeSuit(suit)
+			gameRoom.in(currentRoom.emit('updateGame',game[currentRoom])
 		})
 
 	})
